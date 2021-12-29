@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import pkj from "../package.json";
+import productsRoutes from "./routes/products.routes";
 
 const app = express();
 
@@ -16,5 +17,7 @@ app.get("/", (req, res) => {
     version: app.get("pkj").version,
   });
 });
+
+app.use("/products", productsRoutes);
 
 export default app;
