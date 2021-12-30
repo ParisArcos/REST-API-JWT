@@ -8,6 +8,7 @@ const app = express();
 app.set("pkj", pkj);
 
 app.use(morgan("dev"));
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
