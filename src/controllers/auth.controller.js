@@ -1,6 +1,6 @@
 import User from "../models/User";
 import jwt from "jsonwebtoken";
-import config from "../config/config";
+import * as config from "../config/config";
 import Role from "../models/Role";
 
 export const signUp = async (req, res) => {
@@ -29,6 +29,7 @@ export const signUp = async (req, res) => {
 };
 
 export const signIn = async (req, res) => {
+  console.log(config.SECRET);
   const userFound = await User.findOne({ email: req.body.email }).populate(
     "roles"
   );

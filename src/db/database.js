@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { DB_URI } from "../config/config";
 
 mongoose
-  .connect("mongodb://localhost:27017/ApiRestJWT-DB")
+  .connect(DB_URI)
   .then((db) => console.log("DB CONNECTED"))
   .catch((err) => console.log(err));
